@@ -26,7 +26,7 @@ do
 #for i in quit _binary_ ps;do echo $i > tmpf;if ;then echo exiting now;elif grep -q "_binary_" $tmpf;then echo "This is binary data"; else sh $tmpf;fi;done
 
     base64 -d enc > denc;> enc
-    if grep -q "quit" denc; then
+    if grep -q "_quit_" denc; then
         break
     fi
 # If sending a binary, insert _binary_ as the first line, check for that,
